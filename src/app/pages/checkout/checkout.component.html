@@ -1,0 +1,67 @@
+<div class="container-fluid">
+  <div class="search">
+    <div class="cad">
+      <h1>Check Out</h1>
+    </div>
+    <form class="d-flex justify-content-center" style="visibility: hidden;">
+      <div class="input-group w-75">
+        <input type="text" class="form-control" placeholder="Consultar por nome" aria-describedby="button-addon4" #valueToSearch>
+        <div class="input-group-append" id="button-addon4">
+          <button class="btn btn-success" role="button" type="submit">Consultar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div style="display: flex; align-items: center; flex-direction: column;">
+    <div class="input-group-append" id="button-addon4">
+      <button class="btn btn-warning" role="button" type="submit" (click)="finalizarCompra()">Finalizar compra</button>
+    </div>
+  </div>
+  <div class="container-table" *ngIf="itemsInCart?.length > 0">
+    <table>
+      <caption>Lista de Frutas Adicionadas no carrinho</caption>
+      <thead>
+        <tr>
+          <th cope="col">#</th>
+          <th cope="col">Nome</th>
+          <th cope="col">Imagem</th>
+          <th cope="col">Qtd. Disponível</th>
+          <th cope="col">Qtd. Compra</th>
+          <th cope="col">Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let item of itemsInCart'>
+          <td>
+            <span>{{ item.fruit.id }}</span>
+          </td>
+          <td>
+            <span>{{ item.fruit.name }}</span>
+          </td>
+          <td>
+            <span>
+              <ngx-avatar [src]="'data:image/jpeg;base64,' + item.fruit.picture" size="30" value="28%" [round]="true" [name]="item.fruit.name"></ngx-avatar>
+            </span>
+          </td>
+          <td>
+            <span>{{ item.fruit.availableQuantity }}</span>
+          </td>
+          <td style="width: 150px;">
+            <span>
+              <input
+                #elementQtdRef
+                class="form-control"
+                type="number"
+                min="1"
+                [value]="item.quantity" style="text-align: center;"
+                (change)="changeAvailableQuantity(item)">
+            </span>
+          </td>
+          <td>
+            <span>R$ {{ configurePrice(item) }}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

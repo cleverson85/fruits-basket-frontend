@@ -1,0 +1,32 @@
+body .uwy.userway_p1 {
+    top: 4px !important;
+    right: 13px;
+    left: auto;
+    bottom: auto
+}
+
+body .uwy .uai {
+    position: fixed !important;
+    filter: none !important;
+    cursor: pointer;
+    background: #003d68 !important;
+    border-radius: 50% !important;
+    padding: 3px;
+    transition: .1s;
+    transition-delay: .3s;
+    display: inline-block;
+    width: 35px !important;
+    height: 35px !important;
+    min-width: 35px !important;
+    min-height: 35px !important;
+    max-width: 35px !important;
+    max-height: 35px !important;
+    text-align: center;
+    box-sizing: content-box !important
+}
+
+body .uwy .uai img {
+    display: block;
+    height: 35px !important;
+    width: 35px !important
+}

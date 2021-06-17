@@ -1,0 +1,20 @@
+.status {
+  display: flex;
+  justify-content: center;
+}
+
+.disponivel {
+  background-color: #a2d8a2;
+  border: solid 2px #1c961c;
+  border-radius: 10px;
+  color: #125212;
+  width: 70%;
+}
+
+.indisponivel {
+  background-color: #ffc6cf;
+  border: solid 2px #d25d6f;
+  border-radius: 10px;
+  color: #5a1721;
+  width: 70%; 
+}

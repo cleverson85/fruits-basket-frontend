@@ -1,0 +1,21 @@
+.cards {
+  margin-top: 100px;
+  margin-bottom: 140px;
+}
+
+.search {
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+  top: 0;
+  background-color: #5f9ea0;
+  padding-bottom: 25px;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}

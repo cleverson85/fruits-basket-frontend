@@ -1,0 +1,25 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark position-fixed w-100">
+  <div class="logo">
+    <p>Fruits Basket</p>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/home" routerLinkActive="active">Inicio</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/store" routerLinkActive="active">Store</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/fruit" routerLinkActive="active">Frutas</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" (click)="logOut()" routerLink="" routerLinkActive="active">Sair</a>
+      </li>
+    </ul>
+  </div>
+  <app-cart></app-cart>
+</nav>

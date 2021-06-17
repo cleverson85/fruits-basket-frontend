@@ -1,0 +1,206 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~ngx-toastr/toastr';
+@import '@angular/material/prebuilt-themes/purple-green.css';
+@import 'layout/layout';
+@import './../fonts/customfont.scss';
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+html, body, #app-root {
+  height: 100%;
+  -webkit-font-smoothing: antialiased !important;
+  overflow: auto;
+}
+
+*:focus {
+  outline: 0;
+}
+
+body {
+  -webkit-font-smoothing: antialiased !important;
+  background-color: cadetblue !important;
+}
+
+body, input, button {
+  font: 14px, Roboto-Regular, sans-serif;
+}
+
+h1 {
+  margin-top: 15px;
+}
+
+a {
+  text-decoration: none
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.form-group {
+  margin-top: 5px;
+}
+
+.cad {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px;
+  margin-bottom: 0px;
+  color: #222;
+}
+
+.editcad {
+  padding-top: 90px;
+}
+
+.cad > div > button {
+  margin-right: 1em;
+}
+
+.navbar, .card {
+  box-shadow: 2px 10px 10px 0px #00000033;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+}
+
+label {
+  text-align: left;
+  margin-bottom: 5px;
+  font: 16px Roboto-Regular, sans-serif;
+  opacity: 1;
+  color: #444444;
+}
+
+/* Table */
+.container-table {
+  display: flex;
+  justify-content: center;
+}
+
+div table {
+  width: 80%;
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
+
+thead th {
+  color: #444;
+  font: Bold 16px Roboto-Bold, sans-serif;
+  text-align: center;
+}
+
+tbody tr {
+  background: #fff 0% 0% no-repeat;
+  text-align: center;
+  opacity: 1;
+}
+
+tbody tr span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 16px Roboto-Regular, sans-serif;
+  text-align: center;
+  letter-spacing: 0px;
+  color: #666;
+  opacity: 1;
+  margin: 10px;
+}
+
+tbody tr td img {
+  width: 35px;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+td:first-child {
+  border-left-style: none;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+td:last-child {
+  border-left-style: none;
+  border-bottom-right-radius: 4px;
+  border-top-right-radius: 4px;
+}
+
+tbody :hover {
+  background-color: rgb(224, 224, 228);
+}
+
+.footer {
+  position: fixed;
+  left: -15px;
+  bottom: 10px;
+  width: 100%;
+  text-align: right;
+}
+
+.icon :hover {
+  border-radius: 50%;
+  background-color: #bbb;
+  cursor: pointer;
+}
+
+.mat-list-base .mat-list-item {
+  color: #000;
+}
+
+.mat-list-item-content {
+  padding: 0 !important;
+}
+
+#toast-container {
+  z-index: 9999999;
+}
+
+.search {
+  padding-top: 60px;
+  z-index: 999;
+  width: 100%;
+  top: 0;
+  background-color: #5f9ea0;
+  padding-bottom: 25px;
+}
+
+.avatar {
+  cursor: pointer; 
+}
+
+.avatar:hover{
+  opacity: 0.7;
+}
+
+.avatar img {
+  height: 120px;
+  width: 120px;
+  border-radius: 10px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  background: #eee;
+}
+
+.avatar input[type="file"] {
+  display: none;
+}
+
+.error {
+  border: "solid 1px red";
+}
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';

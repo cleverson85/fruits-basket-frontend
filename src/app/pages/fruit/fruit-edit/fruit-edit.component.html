@@ -1,0 +1,93 @@
+<div class="container-fluid">
+  <div class="cad">
+    <h1>{{ titulo }}</h1>
+    <div>
+      <button type="button" class="btn btn-danger" routerLink="/fruit">
+        Cancelar
+      </button>
+      <button type="sumit" class="btn btn-primary" (click)="save()">
+        Salvar
+      </button>
+    </div>
+  </div>
+  <form [formGroup]="formGroup" class="needs-validation" novalidate enctype="multipart/form-data">
+    <div class="card" style="width: 50%;">
+      <div class="card-body">
+        <div class="form-row">
+          <div class="form-group col-md-9">
+            <label for="name">Nome *</label>
+            <input
+              id="name"
+              class="form-control"
+              type="text"
+              placeholder="Nome"
+              formControlName="name"
+              maxlength="25"
+              [ngClass]="{ 'is-invalid': submitted && hasError('name') }">
+              <div class="invalid-feedback" *ngIf="hasError('name') && hasError('name')['required']">
+                Informe o nome.
+              </div>
+          </div>
+          <div class="form-group col-md-3 d-flex justify-content-center align-items-center">
+            <label class="avatar">*
+              <img 
+                alt=""
+                style="width: 150px;"
+                [src]="url || '../../../../assets/images/imagem-capa.png'">
+              <input type='file' (change)="onSelectFile($event)" [ngClass]="{ 'is-invalid': submitted && hasError('picture') }" accept="image/jpeg">
+              <div class="invalid-feedback" *ngIf="hasError('picture') && hasError('picture')['required']">
+                Informe a imagem.
+              </div>
+            </label>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="availableQuantity">Quantidade Disponível *</label>
+            <input
+              id="availableQuantity"
+              class="form-control"
+              type="text"
+              placeholder="Quantidade Disponível"
+              formControlName="availableQuantity"
+              [textMask]="{mask: numberMask}" 
+              [ngClass]="{ 'is-invalid': submitted && hasError('availableQuantity') }">
+              <div class="invalid-feedback" *ngIf="hasError('availableQuantity') && hasError('availableQuantity')['required']">
+                Informe a quantidade disponível.
+              </div>
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="price">Valor *</label>
+            <input
+              id="price"
+              class="form-control"
+              type="text"
+              placeholder="R$ 1.99"
+              formControlName="price"
+              [textMask]="{mask: moneyMask}" 
+              [ngClass]="{ 'is-invalid': submitted && hasError('price') }">
+              <div class="invalid-feedback" *ngIf="hasError('price') && hasError('price')['required']">
+                Informe o valor.
+              </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group col-md-12">
+            <label for="description">Descrição</label>
+            <textarea 
+              id="description"
+              class="form-control"
+              type="text"
+              placeholder="Descrição"
+              formControlName="description"
+              maxlength="500"
+              rows="3"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

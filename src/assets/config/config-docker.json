@@ -1,0 +1,8 @@
+{
+  "name": "${NAME}",
+  "production": "${PRODUCTION}",
+  "api": {
+    "url": "${API_URL}"
+  },
+  "itensPerPage": "${QTD_ITEM}"
+}

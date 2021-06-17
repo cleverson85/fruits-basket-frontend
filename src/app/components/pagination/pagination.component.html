@@ -1,0 +1,6 @@
+<div>
+  <ul>
+    <li *ngFor="let item of pages | paginate: config">{{ item }}</li>
+  </ul>
+  <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
+</div>

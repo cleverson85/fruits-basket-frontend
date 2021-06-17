@@ -1,0 +1,53 @@
+<div class="container-fluid">
+  <div class="search">
+    <div class="cad">
+      <h1>Store</h1>
+    </div>
+    <form class="d-flex justify-content-center" style="visibility: hidden;">
+      <div class="input-group w-75">
+        <input type="text" class="form-control" placeholder="Consultar por nome" aria-describedby="button-addon4" #valueToSearch>
+        <div class="input-group-append" id="button-addon4">
+          <button class="btn btn-success" role="button" type="submit">Consultar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="container-table" *ngIf="store?.length > 0">
+    <table>
+      <caption>Lista de Saída de Frutas</caption>
+      <thead>
+        <tr>
+          <th cope="col">#</th>
+          <th cope="col">Nome</th>
+          <th cope="col">Imagem</th>
+          <th cope="col">Qtd. Compra</th>
+          <th cope="col">Valor</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor='let item of store'>
+          <td>
+            <span>{{ item.fruit.id }}</span>
+          </td>
+          <td>
+            <span>{{ item.fruit.name }}</span>
+          </td>
+          <td>
+            <span>
+              <ngx-avatar [src]="'data:image/jpeg;base64,' + item.fruit.picture" size="30" value="28%" [round]="true" [name]="item.fruit.name"></ngx-avatar>
+            </span>
+          </td>
+          <td>
+            <span>{{ item.quantity }}</span>
+          </td>
+          <td>
+            <span>R$ {{ item.totalValue }}</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="footer">
+      <app-pagination [items]="pages" (pageChange)="onPageChange($event)"></app-pagination>
+    </div>
+  </div>
+</div>
